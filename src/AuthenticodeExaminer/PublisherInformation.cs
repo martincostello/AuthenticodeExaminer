@@ -49,7 +49,7 @@ namespace AuthenticodeExaminer
         /// <param name="data">The ASN.1 encoded data for the publisher information.</param>
         public PublisherInformation(AsnEncodedData data)
         {
-            if (data.Oid.Value != KnownOids.OpusInfo)
+            if (data.Oid?.Value != KnownOids.OpusInfo)
             {
                 throw new ArgumentException("Data is not a publisher information object.", nameof(data));
             }

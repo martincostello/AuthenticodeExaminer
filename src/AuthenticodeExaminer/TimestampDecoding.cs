@@ -14,7 +14,7 @@ namespace AuthenticodeExaminer
     {
         public static DateTimeOffset? DecodeAuthenticodeTimestamp(AsnEncodedData data)
         {
-            if (data.Oid.Value != KnownOids.SigningTime)
+            if (data.Oid?.Value != KnownOids.SigningTime)
             {
                 throw new ArgumentException("Data is not a signing time object.", nameof(data));
             }
